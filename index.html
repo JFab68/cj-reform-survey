@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criminal Justice Reform Legislative Priorities Survey</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="survey-header">
+            <h1>Criminal Justice Reform Legislative Priorities Survey</h1>
+            <div class="survey-intro">
+                <strong>Hello:</strong><br>
+                Representative Powell is gathering input from advocates, stakeholders, directly impacted individuals, and community members to identify and organize key legislative priorities for the upcoming session. Your feedback is crucial for focusing our collective efforts on the most impactful reforms.
+            </div>
+        </header>
+
+        <div class="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-text">
+                <span id="currentStep">1</span> of <span id="totalSteps">4</span>
+            </div>
+        </div>
+
+        <form id="surveyForm">
+            <!-- Section 1: Background -->
+            <div class="section active" id="section1">
+                <h2>Section 1: Background</h2>
+                <p class="section-description">This section helps us understand the different perspectives of those responding to the survey.</p>
+                
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label class="section-label">Please check which of the following best describes your role or connection to criminal justice reform? (Check all that apply)</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-with-specify">
+                            <input type="checkbox" name="role" value="justice_involved" data-specify="true">
+                            Justice Involved Individual
+                            <div class="specify-field" style="display: none;">
+                                <input type="text" name="justice_involved_detail" placeholder="Please specify your experience (e.g., formerly incarcerated, currently on probation)">
+                            </div>
+                        </label>
+                        
+                        <label class="checkbox">
+                            <input type="checkbox" name="role" value="family_member">
+                            Family member of someone currently or formerly incarcerated
+                        </label>
+                        
+                        <label class="checkbox-with-specify">
+                            <input type="checkbox" name="role" value="non_profit" data-specify="true">
+                            Non-profit, social service provider, or advocacy organization staff
+                            <div class="specify-field" style="display: none;">
+                                <input type="text" name="non_profit_detail" placeholder="Organization name">
+                            </div>
+                        </label>
+                        
+                        <label class="checkbox-with-specify">
+                            <input type="checkbox" name="role" value="lobbyist" data-specify="true">
+                            Paid lobbyist
+                            <div class="specify-field" style="display: none;">
+                                <input type="text" name="lobbyist_detail" placeholder="Firm/organization name">
+                            </div>
+                        </label>
+                        
+                        <label class="checkbox-with-specify">
+                            <input type="checkbox" name="role" value="policy_maker" data-specify="true">
+                            Policy maker
+                            <div class="specify-field" style="display: none;">
+                                <input type="text" name="policy_maker_detail" placeholder="Office/agency and position">
+                            </div>
+                        </label>
+                        
+                        <label class="checkbox-with-specify">
+                            <input type="checkbox" name="role" value="legal_professional" data-specify="true">
+                            Current or former legal professional (e.g., lawyer, judge)
+                            <div class="specify-field" style="display: none;">
+                                <input type="text" name="legal_professional_detail" placeholder="Role/specialization">
+                            </div>
+                        </label>
+                        
+                        <label class="checkbox-with-specify">
+                            <input type="checkbox" name="role" value="law_enforcement" data-specify="true">
+                            Current or former law enforcement or corrections staff
+                            <div class="specify-field" style="display: none;">
+                                <input type="text" name="law_enforcement_detail" placeholder="Department and role">
+                            </div>
+                        </label>
+                        
+                        <label class="checkbox">
+                            <input type="checkbox" name="role" value="general_public">
+                            General public / interested citizen
+                        </label>
+                        
+                        <label class="checkbox-with-specify">
+                            <input type="checkbox" name="role" value="other" data-specify="true">
+                            Other
+                            <div class="specify-field" style="display: none;">
+                                <input type="text" name="other_detail" placeholder="Please specify your role">
+                            </div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Continue with more sections... -->
+            <div class="navigation">
+                <button type="button" id="prevBtn" onclick="changeStep(-1)" style="display: none;">Previous</button>
+                <button type="button" id="nextBtn" onclick="changeStep(1)">Next</button>
+                <button type="submit" id="submitBtn" style="display: none;">Submit Survey</button>
+            </div>
+        </form>
+
+        <div id="loadingIndicator" style="display: none;">
+            <div class="loading-spinner"></div>
+            <p>Submitting your survey...</p>
+        </div>
+
+        <div id="successMessage" style="display: none;">
+            <div class="success-content">
+                <h2>Thank You!</h2>
+                <p>Your survey has been submitted successfully. Your input is valuable for shaping criminal justice reform priorities.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
