@@ -2,7 +2,7 @@
 // This handles the conditional "specify" fields that appear under checkboxes
 
 let currentStep = 1;
-const totalSteps = 4;
+const totalSteps = 5; // Fixed: Changed from 4 to 5 to match HTML sections
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize the form
@@ -134,26 +134,12 @@ function validateCurrentStep() {
 }
 
 function validateSection1() {
-    const name = document.getElementById('name').value.trim();
     const phone = document.getElementById('phone').value.trim();
-    const email = document.getElementById('email').value.trim();
     const roleCheckboxes = document.querySelectorAll('input[name="role"]:checked');
-    
-    if (!name) {
-        alert('Please enter your name.');
-        document.getElementById('name').focus();
-        return false;
-    }
     
     if (!phone) {
         alert('Please enter your phone number.');
         document.getElementById('phone').focus();
-        return false;
-    }
-    
-    if (!email) {
-        alert('Please enter your email address.');
-        document.getElementById('email').focus();
         return false;
     }
     
