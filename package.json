@@ -1,0 +1,19 @@
+{
+  "name": "criminal-justice-reform-survey",
+  "version": "1.0.0",
+  "description": "Legislative priorities survey for criminal justice reform with conditional fields",
+  "main": "index.html",
+  "scripts": {
+    "dev": "netlify dev",
+    "build": "echo 'Static site build complete'",
+    "start": "netlify dev"
+  },
+  "dependencies": {
+    "@netlify/functions": "^2.6.0",
+    "@netlify/neon": "^0.10.0"
+  },
+  "devDependencies": {},
+  "keywords": ["survey", "criminal-justice", "reform", "netlify"],
+  "author": "John Fabricius",
+  "license": "MIT"
+}
